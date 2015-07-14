@@ -1,0 +1,25 @@
+body {
+    width: 100%;
+    background-color: #fdfff7
+}
+h1 {
+    font: normal normal 900 normal 150px'Poiret One', serif;
+    font-stretch: normal;
+    color: #b73f5c;
+    text-align: center;
+    margin-top: 100px
+}
+.h2 {
+    text-align: center;
+    font-family: 'Poiret One', serif;
+    color: #b73f5c;
+    margin-top: -28px;
+    font-weight: 900
+}
+.form-horizontal {
+    margin-top: 100px;
+    margin-left: 25%;
+}
+.page-header {
+    font: 113px'Poiret One', serif
+}
