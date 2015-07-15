@@ -40,6 +40,19 @@ function checkAnswer(selectedOption) {
 
 }
 
+function checkAnswer2(){
+    var answer = $('form').serialize().split("=")[1];
+    if (answer == "option1") {
+        localStorage.setItem('prevQuestionResult', true);
+        alert('You got that right! Loading new question.');
+    } else {
+        localStorage.setItem('prevQuestionResult', false);
+        alert('Nope! Loading new question.');
+    }
+    console.log(answer);
+    loadQuestion();
+}
+
 function displayQuestion(data) {
     var dataObj = jQuery.parseJSON(data);
     console.log(dataObj);
@@ -47,10 +60,10 @@ function displayQuestion(data) {
     document.getElementById('question').innerText = dataObj.question;
     var ansArray = ['option1','option2','option3','option4'];
     shuffle(ansArray);
-    document.getElementById(ansArray[0]).innerText = dataObj.option1;
-    document.getElementById(ansArray[1]).innerText = dataObj.option2;
-    document.getElementById(ansArray[2]).innerText = dataObj.option3;
-    document.getElementById(ansArray[3]).innerText = dataObj.option4;
+    document.getElementById(ansArray[0]).innerHTML = "<input name='answer' type='radio' value='option1' id='" + ansArray[0] + "Radio'> <label for='" + ansArray[0] + "Radio'>" + dataObj.option1 + "</label>";
+    document.getElementById(ansArray[1]).innerHTML = "<input name='answer' type='radio' value='option2'  id='" + ansArray[1] + "Radio'> <label for='"+ ansArray[1] + "Radio'>" + dataObj.option2 + "</label>";
+    document.getElementById(ansArray[2]).innerHTML = "<input name='answer' type='radio' value='option3'  id='" + ansArray[2] + "Radio'> <label for='" + ansArray[2] + "Radio'>" + dataObj.option3 + "</label>";
+    document.getElementById(ansArray[3]).innerHTML = "<input name='answer' type='radio' value='option4'  id='" + ansArray[3] + "Radio'> <label for='" + ansArray[3] + "Radio'>" + dataObj.option4 + "</label>";
     document.getElementById('questionID').innerText = dataObj.questionID;
 }
 
