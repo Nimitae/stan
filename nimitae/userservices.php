@@ -1,4 +1,5 @@
 <?php
+require_once('forAllPages.php');
 include("dbconfig.php");
 include("lib/swift_required.php");
 
@@ -10,7 +11,7 @@ if (isset($_POST['login']) && isset($_POST['email']) && isset($_POST['password']
     $return = array();
     $return['type'] = $_POST['login'];
     $sqlParams = array();
-    $dbh = new PDO($DBCONFIG["connstring"], $DBCONFIG["username"], $DBCONFIG["password"]);
+    $dbh = new PDO(DBconfig::$DB_CONNSTRING, DBConfig::$DB_USERNAME, DBConfig::$DB_PASSWORD);
     $sql = "SELECT * from users WHERE email = ? AND password = ? AND status = 2;";
     $sqlParams[] = $_POST["email"];
     $sqlParams[] = md5($_POST["password"]);
@@ -30,7 +31,7 @@ if (isset($_POST['register']) && isset($_POST['email']) && isset($_POST['passwor
     $return = array();
     $return['type'] = $_POST['register'];
     $sqlParams = array();
-    $dbh = new PDO($DBCONFIG["connstring"], $DBCONFIG["username"], $DBCONFIG["password"]);
+    $dbh = new PDO(DBconfig::$DB_CONNSTRING, DBConfig::$DB_USERNAME, DBConfig::$DB_PASSWORD);
     $sql = "SELECT * FROM users WHERE email = ?;";
     $sqlParams[] = $_POST["email"];
     $stmt = $dbh->prepare($sql);

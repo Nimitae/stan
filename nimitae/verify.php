@@ -1,11 +1,12 @@
 <?php
+require_once('forAllPages.php');
 include("dbconfig.php");
 
 $verifySuccessful = false;
 if (isset($_GET['email']) && isset($_GET['hash'])){
 
     $sqlParams = array();
-    $dbh = new PDO($DBCONFIG["connstring"], $DBCONFIG["username"], $DBCONFIG["password"]);
+    $dbh = new PDO(DBconfig::$DB_CONNSTRING, DBConfig::$DB_USERNAME, DBConfig::$DB_PASSWORD);
     $sql = "SELECT * FROM users WHERE email = ? AND hash = ?;";
     $sqlParams[] = $_GET["email"];
     $sqlParams[] = $_GET["hash"];

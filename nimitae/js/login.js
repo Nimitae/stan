@@ -12,6 +12,7 @@ function register() {
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
     var repeat = document.getElementById("repeat").value;
+    alert("Please wait while we register your account!");
     if (password == repeat) {
         $.ajax({
             url: url,
@@ -46,6 +47,7 @@ function processResult(data) {
     if (dataObj.type == "login") {
         if (dataObj.result == "Success") {
             alert('Logged in successfully!');
+            window.location.replace("home.php");
             /*
              var email = document.getElementById("email").value;
              var password = document.getElementById("password").value;

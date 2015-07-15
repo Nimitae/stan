@@ -1,4 +1,6 @@
 <?php
+require_once('forAllPages.php');
+
 
 include('header.partial.php');
 ?>
