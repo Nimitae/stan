@@ -385,3 +385,7 @@ form.form-signin>button.btn {
     border-image-outset: initial;
     border-image-repeat: initial
 }
+
+.question-option {
+    cursor: pointer;
+}

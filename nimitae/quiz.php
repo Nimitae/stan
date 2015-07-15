@@ -105,10 +105,10 @@ $category = $moduleServices->getModuleIDOfCategory($_POST['categoryID']);
             <h2 class="sub-header"><?php print $category->moduleID . ' : ' . $category->title; ?></h2>
             <p id="question">THIS IS THE FIRST QUESTION!?</p>
             <br>
-            <p onclick="checkAnswer(this)" id="option1">Yes</p>
-            <p onclick="checkAnswer(this)" id="option2">No</p>
-            <p onclick="checkAnswer(this)" id="option3">Maybe</p>
-            <p onclick="checkAnswer(this)" id="option4">What?</p>
+            <p class="question-option" onclick="checkAnswer(this)" id="option1">Yes</p>
+            <p class="question-option" onclick="checkAnswer(this)" id="option2">No</p>
+            <p class="question-option" onclick="checkAnswer(this)" id="option3">Maybe</p>
+            <p class="question-option" onclick="checkAnswer(this)" id="option4">What?</p>
 
         </div>
         <div hidden id="categoryID"><?php print $category->categoryID; ?></div>
