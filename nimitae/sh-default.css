@@ -455,6 +455,13 @@ form.form-signin>button.btn {
     padding-left: 12px;
     padding-right: 12px
 }
+.btn.btn-default.btn-primary.start3 {
+    background-color: #f0544f;
+    font-size: 45px;
+    margin-left: 650px;
+    margin-top: 350px;
+    margin-right: 0
+}
 .btn.btn-default.btn-primary.start:hover {
     color: #000
 }
