@@ -326,7 +326,13 @@ h1 {
 }
 .page-header {
     font-stretch: normal;
-    font: 200 113px'Advent Pro', serif
+    font: 200 103px'Advent Pro', serif;
+    text-align: left;
+    color: #000;
+    background-color: #c6d8d3;
+    padding-left: 35px;
+    margin-left: -40px;
+    margin-right: auto
 }
 .nav.navbar-nav.navbar-right>li>a:hover {
     font-style: oblique!important
@@ -348,7 +354,10 @@ h1 {
 }
 .nav.nav-sidebar>li {
     font-stretch: normal;
-    font: 400 17px'Josefin Sans'
+    font: 400 17px'Josefin Sans';
+    border-right-width: 0;
+    border-right-style: initial;
+    border-right-color: initial
 }
 .sub-header {
     text-transform: uppercase;
@@ -385,7 +394,61 @@ form.form-signin>button.btn {
     border-image-outset: initial;
     border-image-repeat: initial
 }
-
-.question-option {
-
+.page-header.quiz-header {
+    width: auto;
+    font-size: 100px;
+    font-weight: 300;
+    margin-bottom: -30px;
+    background-color: rgba(198, 216, 211, 0);
+    height: auto;
+    margin-top: -30px;
+    text-align: center
+}
+.page-header.quiz-subheader {
+    font-size: 75px;
+    padding-right: 0;
+    margin-right: 0;
+    padding-bottom: 0
+}
+.btn.btn-default.btn-primary {
+    margin-left: 0;
+    margin-top: 50px;
+    font-stretch: normal;
+    font: 20px'Josefin Sans', serif;
+    border: 0;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial
+}
+.btn.btn-default.btn-primary.quiz:hover {
+    color: #fff
+}
+.btn.btn-default.btn-primary.quiz {
+    background-color: #c6d8d3;
+    color: #000;
+    font-weight: 600
+}
+.btn.btn-default.btn-primary.start {
+    background-color: #f0544f;
+    font-size: 20px;
+    margin-left: 0;
+    margin-top: 0;
+    margin-right: 0;
+    padding-left: 12px;
+    padding-right: 12px
+}
+.btn.btn-default.btn-primary.start:hover {
+    color: #000
+}
+p {
+    margin-top: 50px;
+    margin-right: 40px;
+    font-stretch: normal;
+    font: 14px helvetica
+}
+.page-header.quiz-header>img.resize {
+    height: 75%;
+    width: 75%
 }

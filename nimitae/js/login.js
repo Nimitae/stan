@@ -46,7 +46,6 @@ function processResult(data) {
 
     if (dataObj.type == "login") {
         if (dataObj.result == "Success") {
-            alert('Logged in successfully!');
             window.location.replace("home.php");
             /*
              var email = document.getElementById("email").value;

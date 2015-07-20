@@ -2,7 +2,7 @@
 require_once('forAllPages.php');
 require_once('class/module.class.php');
 require_once('class/category.class.php');
-include("dbconfig.php");
+require_once("dbconfig.php");
 
 
 class ModuleServices
@@ -34,7 +34,7 @@ class ModuleServices
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $categoryArray = array();
         foreach ($result as $row) {
-            $newCategory = new Category ($row['categoryID'], $row['moduleID'], $row['title'], $row['description']);
+            $newCategory = new Category ($row['categoryID'], $row['moduleID'], $row['title'], $row['description'], $row['questionType']);
             $categoryArray[] = $newCategory;
         }
         return $categoryArray;
@@ -56,9 +56,25 @@ class ModuleServices
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $categoryArray = array();
         foreach ($result as $row) {
-            $newCategory = new Category ($row['categoryID'], $row['moduleID'], $row['title'], $row['description']);
+            $newCategory = new Category ($row['categoryID'], $row['moduleID'], $row['title'], $row['description'], $row['questionType']);
             $categoryArray[] = $newCategory;
         }
         return $categoryArray[0];
+    }
+
+    public function getAllCategories()
+    {
+        $dbh = new PDO(DBconfig::$DB_CONNSTRING, DBConfig::$DB_USERNAME, DBConfig::$DB_PASSWORD);
+        $sql = "SELECT * from categories;";
+        $stmt = $dbh->prepare($sql);
+        $stmt->bindParam(":moduleID", $moduleID);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $categoryArray = array();
+        foreach ($result as $row) {
+            $newCategory = new Category ($row['categoryID'], $row['moduleID'], $row['title'], $row['description'], $row['questionType']);
+            $categoryArray[$row['categoryID']] = $newCategory;
+        }
+        return $categoryArray;
     }
 }
