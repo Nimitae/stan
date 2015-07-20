@@ -398,12 +398,22 @@ form.form-signin>button.btn {
     width: auto;
     font-size: 100px;
     font-weight: 300;
+    margin-bottom: -30px
+}
+
+.page-header.quiz-header2 {
+    width: auto;
+    font-size: 100px;
+    font-weight: 300;
     margin-bottom: -30px;
     background-color: rgba(198, 216, 211, 0);
     height: auto;
     margin-top: -30px;
     text-align: center
 }
+
+
+
 .page-header.quiz-subheader {
     font-size: 75px;
     padding-right: 0;
@@ -432,6 +442,12 @@ form.form-signin>button.btn {
 }
 .btn.btn-default.btn-primary.start {
     background-color: #f0544f;
+    font-size: 60px;
+    margin-left: 100px
+}
+
+.btn.btn-default.btn-primary.start2 {
+    background-color: #f0544f;
     font-size: 20px;
     margin-left: 0;
     margin-top: 0;
@@ -442,13 +458,14 @@ form.form-signin>button.btn {
 .btn.btn-default.btn-primary.start:hover {
     color: #000
 }
+
 p {
     margin-top: 50px;
     margin-right: 40px;
     font-stretch: normal;
     font: 14px helvetica
 }
-.page-header.quiz-header>img.resize {
+.page-header.quiz-header2>img.resize {
     height: 75%;
     width: 75%
 }
