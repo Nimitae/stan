@@ -459,7 +459,7 @@ form.form-signin>button.btn {
     background-color: #f0544f;
     font-size: 45px;
     margin-left: 650px;
-    margin-top: 350px;
+    margin-top: 0px;
     margin-right: 0
 }
 .btn.btn-default.btn-primary.start:hover {
@@ -475,4 +475,20 @@ p {
 .page-header.quiz-header2>img.resize {
     height: 75%;
     width: 75%
+}
+
+.option-label {
+    font-weight:100 ;
+}
+
+.result-option {
+    padding-top: 10px;
+}
+
+.green-answer {
+    color: green;
+}
+
+.red-answer {
+    color:red;
 }
