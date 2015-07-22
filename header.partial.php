@@ -73,7 +73,7 @@
                     <a href="stastistics.php" style="color:white" class>Statistics</a>
                 </li>
                 <li>
-                    <a href="#" style="color:white">Analytics</a>
+                    <a href="modulelist.php" style="color:white">Modules</a>
                 </li>
                 <li>
                     <a href="#" style="color:white">Export</a>
