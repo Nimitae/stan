@@ -7,7 +7,7 @@ $moduleListing = $moduleServices->getModuleListing();
 include('header.partial.php');
 ?>
 
-<h1 class="page-header">
+<h1 class="overview-header">
     Welcumz
 </h1>
 
@@ -16,7 +16,7 @@ include('header.partial.php');
 </h2>
 
 <div class="table-responsive">
-    <table class="table table-striped">
+    <table class="table table">
         <thead>
         <tr>
             <th style="width:15%">

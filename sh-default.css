@@ -30,6 +30,11 @@ h1 {
     margin-left: -40px;
     margin-right: auto
 }
+
+.overview-header{
+    font: 100px'Advent Pro';
+    margin-top: 20px;
+}
 .nav.navbar-nav.navbar-right>li>a:hover {
     font-style: oblique!important
 }
@@ -200,4 +205,8 @@ p {
 }
 .btnbar {
     background-color: #f0544f
+}
+
+table>tbody>tr:hover{
+    background-color: #c6d8d3;
 }
