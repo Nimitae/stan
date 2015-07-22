@@ -1,0 +1,203 @@
+body {
+    width: 100%;
+    background-color: #fdfff7
+}
+h1 {
+    font: normal normal 900 normal 150px'Poiret One', serif;
+    font-stretch: normal;
+    color: #b73f5c;
+    text-align: center;
+    margin-top: 100px
+}
+.h2 {
+    text-align: center;
+    font-family: 'Poiret One', serif;
+    color: #b73f5c;
+    margin-top: -28px;
+    font-weight: 900
+}
+.form-horizontal {
+    margin-top: 100px;
+    margin-left: 25%
+}
+.page-header {
+    font-stretch: normal;
+    font: 200 103px'Advent Pro', serif;
+    text-align: left;
+    color: #000;
+    background-color: #c6d8d3;
+    padding-left: 35px;
+    margin-left: -40px;
+    margin-right: auto
+}
+.nav.navbar-nav.navbar-right>li>a:hover {
+    font-style: oblique!important
+}
+.nav.navbar-nav.navbar-right>li {
+    font-stretch: normal;
+    font: 500 18px'Josefin Sans'
+}
+.navbar-header>a.navbar-brand {
+    color: #fdfff7;
+    font-stretch: normal;
+    font: 900 25px'Poiret One';
+    padding-top: 10px
+}
+.nav.nav-sidebar>li>a:hover {
+    font-stretch: normal;
+    font: 500 17px'Josefin Sans';
+    color: #d9534f!important
+}
+.nav.nav-sidebar>li {
+    font-stretch: normal;
+    font: 400 17px'Josefin Sans';
+    border-right-width: 0;
+    border-right-style: initial;
+    border-right-color: initial
+}
+.sub-header {
+    text-transform: uppercase;
+    font-stretch: normal;
+    font: 900 26px'Josefin Sans', serif
+}
+th {
+    font-stretch: normal!important;
+    font: 900 19px'Josefin Sans'!important
+}
+td {
+    font-stretch: normal;
+    font: 600 15px'Josefin Sans'
+}
+form.form-signin>h2 {
+    font-stretch: normal;
+    font: 900 30px'Poiret One'
+}
+form.form-signin>input.form-control {
+    font-size: 14px!important
+}
+form.form-signin>input.outcast {
+    position: relative;
+    top: -12px
+}
+form.form-signin>button.btn {
+    font-stretch: normal;
+    font: 600 22px'Poiret One';
+    background: #d9534f;
+    border: #d9534f;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial
+}
+.page-header.quiz-header {
+    width: auto;
+    font-size: 100px;
+    font-weight: 300;
+    margin-bottom: -30px
+}
+.page-header.quiz-header2 {
+    width: auto;
+    font-size: 100px;
+    font-weight: 300;
+    margin-bottom: -30px;
+    background-color: rgba(198, 216, 211, 0);
+    height: auto;
+    margin-top: -30px;
+    text-align: center
+}
+.page-header.quiz-subheader {
+    font-size: 75px;
+    padding-right: 0;
+    margin-right: 0;
+    padding-bottom: 0
+}
+.btn.btn-default.btn-primary {
+    margin-left: 0;
+    margin-top: 50px;
+    font-stretch: normal;
+    font: 20px'Josefin Sans', serif;
+    border: 0;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial
+}
+.btn.btn-default.btn-primary.quiz:hover {
+    color: #fff
+}
+.btn.btn-default.btn-primary.quiz {
+    background-color: #c6d8d3;
+    color: #000;
+    font-weight: 600
+}
+.btn.btn-default.btn-primary.start {
+    background-color: #f0544f;
+    font-size: 60px;
+    margin-left: 100px
+}
+.btn.btn-default.btn-primary.start2 {
+    background-color: #f0544f;
+    font-size: 20px;
+    margin-left: 0;
+    margin-top: 0;
+    margin-right: 0;
+    padding-left: 12px;
+    padding-right: 12px
+}
+.btn.btn-default.btn-primary.start3 {
+    background-color: #f0544f;
+    font-size: 45px;
+    margin-left: 650px;
+    margin-top: 0px;
+    margin-right: 0
+}
+.btn.btn-default.btn-primary:hover {
+    color: #000
+}
+p {
+    margin-top: 50px;
+    margin-right: 40px;
+    font-stretch: normal;
+    font: 14px helvetica
+}
+.page-header.quiz-header2>img.resize {
+    height: 75%;
+    width: 75%
+}
+.option-label {
+    font-weight:100 ;
+}
+.result-option {
+    padding-top: 10px;
+}
+.green-answer {
+    color: green;
+}
+.red-answer {
+    color: red;
+}
+.bluebg {
+    background-color: #c6d8d3
+}
+.blackfont {
+    color: #313638
+}
+.qnman {
+    margin-top: 20px;
+    text-align: left;
+    padding-left: 35px;
+    font-stretch: normal;
+    font: 80px'Advent Pro'
+}
+.modcod {
+    margin-top: 0;
+    text-align: left;
+    padding-left: 35px;
+    font-stretch: normal;
+    font: 60px'Advent Pro'
+}
+.btnbar {
+    background-color: #f0544f
+}

@@ -1,1 +1,2 @@
-<3
+<?php
+require_once('forAllPages.php');
