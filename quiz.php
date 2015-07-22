@@ -4,7 +4,7 @@ require_once('forAllPages.php');
 require_once('moduleservices.php');
 $moduleServices = new ModuleServices();
 
-$category = $moduleServices->getModuleIDOfCategory($_POST['categoryID']);
+$category = $moduleServices->getCategoryByID($_POST['categoryID']);
 
 include('header.partial.php');
 ?>

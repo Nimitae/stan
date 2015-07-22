@@ -35,7 +35,6 @@ include('header.partial.php');
                                 <?php print $category->description; ?>
                             </td>
                         </tr>
-
                     <?php endforeach; ?>
                     </tbody>
                 </table>

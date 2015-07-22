@@ -1,6 +1,7 @@
 <?php
 require_once('forAllPages.php');
 require_once('moduleservices.php');
+
 $moduleServices = new ModuleServices();
 $moduleListing = $moduleServices->getModuleListing();
 
@@ -43,7 +44,6 @@ include('header.partial.php');
                     <?php print $module->description; ?>
                 </td>
             </tr>
-
         <?php endforeach; ?>
         </tbody>
     </table>
