@@ -25,8 +25,8 @@ include('header.partial.php');
             <div class="panel-heading module-header">
                 <h4 class="module-header" data-toggle="collapse" data-target="#<?php print $module->moduleID; ?>">
                     <?php print $module->moduleID ?>
-                </h4>
-            </div></a>
+                </h4></a>
+            </div>
 
             <div id="<?php print $module->moduleID; ?>" class="panel-collapse collapse">
                 <div class="panel-body">

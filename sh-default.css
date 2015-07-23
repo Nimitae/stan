@@ -214,9 +214,6 @@ table>tbody>tr:hover{
 .module-header{
     background-color: lightseagreen;
     color:black;
-    padding-left: 20px;
-    padding-top:10px;
-    padding-bottom:10px;
     font: 600 20px 'Josefin Sans';
 }
 
@@ -253,4 +250,12 @@ h4.module-header{
 .panel-heading{
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
+}
+
+a:hover{
+    text-decoration: none !important;
+}
+
+a:link{
+    text-decoration: none;
 }
