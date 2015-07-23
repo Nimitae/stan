@@ -220,19 +220,37 @@ table>tbody>tr:hover{
     font: 600 20px 'Josefin Sans';
 }
 
-.module-body>a{
+a>div.module-body {
     color: black !important;
-    margin-left: 20px;
     font: 600 15px 'Advent Pro';
+    padding-left:40px;
 
 }
 
 .module-header:hover{
     color:white;
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
-.module-body:hover{
+a>div.module-body:hover{
     background-color: lightcyan;
-    text-decoration: none;
+    text-decoration: none !important;
+}
+
+.panel-body{
+    padding-left:0px;
+    padding-right:0px;
+}
+
+h4.module-header{
+    padding:0px;
+    margin:0px;
+}
+.panel {
+    margin-bottom: 0px;
+}
+
+.panel-heading{
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
 }
