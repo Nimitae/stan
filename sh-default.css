@@ -211,23 +211,28 @@ table>tbody>tr:hover{
     background-color: #c6d8d3;
 }
 
-.panel-head{
-    background-color:#313638 !important;
-    color:white !important;
-    border:none !important;
-}
-
 .module-header{
-    background-color: #c6d8d3;
+    background-color: lightseagreen;
     color:black;
     padding-left: 20px;
     padding-top:10px;
     padding-bottom:10px;
-    font: 20px 'Josephin Sans';
+    font: 600 20px 'Josefin Sans';
 }
 
 .module-body>a{
     color: black !important;
-    margin-right: 40px;
+    margin-left: 20px;
+    font: 600 15px 'Advent Pro';
 
+}
+
+.module-header:hover{
+    color:white;
+    text-decoration: none;
+}
+
+.module-body:hover{
+    background-color: lightcyan;
+    text-decoration: none;
 }
