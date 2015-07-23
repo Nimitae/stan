@@ -44,8 +44,6 @@ function hideStartQuiz() {
 
 function loadMCQQuestion() {
     initialiseQuestionFields();
-    console.log(document.getElementById('categoryID').innerText);
-    console.log(document.getElementById('questionID').innerText);
     var prevQuestionPass = localStorage.getItem('prevQuestionResult');
     $.ajax({
         url: 'questionselector.php',
@@ -160,7 +158,6 @@ function displayMCQ(data) {
         "correct": ansArray[0]
     };
     currentQuestionList.push(question);
-    console.log(currentQuestionList);
     updateProgressBar();
 }
 
@@ -188,22 +185,21 @@ function shuffle(o) {
 
 function updateProgressBar() {
     var progressBarImages = [
-        '',
-        '',
-        '',
-        '',
-        '//i61.tinypic.com/2s84d2h.png'
+        'images/0.png',
+        'images/25.png',
+        'images/50.png',
+        'images/75.png',
+        'images/100.png'
     ];
-    console.log(currentQuestion);
     if (currentQuestion == totalQuestions) {
         document.getElementById("progress-bar").src = progressBarImages[4];
     } else if (currentQuestion > totalQuestions * 3 / 4) {
         document.getElementById("progress-bar").src = progressBarImages[3];
-    } else if (currentQuestion > totalQuestions * 3 / 4) {
+    } else if (currentQuestion > totalQuestions * 2 / 4) {
         document.getElementById("progress-bar").src = progressBarImages[2];
-    } else if (currentQuestion > totalQuestions * 3 / 4) {
+    } else if (currentQuestion > totalQuestions / 4) {
         document.getElementById("progress-bar").src = progressBarImages[1];
-    } else if (currentQuestion > totalQuestions * 3 / 4) {
+    } else if (currentQuestion > 0) {
         document.getElementById("progress-bar").src = progressBarImages[0];
     }
 }
@@ -224,7 +220,7 @@ function loadEndQuiz() {
 
         var correct = currentQuestionList[i].correct.split('option')[1];
         $('#' + i + '_' + correct).addClass('green-answer');
-        if (currentQuestionList[i].correct != currentQuestionList[i].answered) {
+        if (typeof currentQuestionList[i].answered != 'undefined'  && currentQuestionList[i].correct != currentQuestionList[i].answered) {
             var wrong = currentQuestionList[i].answered.split('option')[1];
             $('#' + i + '_' + wrong).addClass('red-answer');
         }
