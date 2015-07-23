@@ -155,7 +155,7 @@ form.form-signin>button.btn {
     background-color: #f0544f;
     font-size: 45px;
     margin-left: 650px;
-    margin-top: 0px;
+    margin-top: 0;
     margin-right: 0
 }
 .btn.btn-default.btn-primary:hover {
@@ -209,4 +209,25 @@ p {
 
 table>tbody>tr:hover{
     background-color: #c6d8d3;
+}
+
+.panel-head{
+    background-color:#313638 !important;
+    color:white !important;
+    border:none !important;
+}
+
+.module-header{
+    background-color: #c6d8d3;
+    color:black;
+    padding-left: 20px;
+    padding-top:10px;
+    padding-bottom:10px;
+    font: 20px 'Josephin Sans';
+}
+
+.module-body>a{
+    color: black !important;
+    margin-right: 40px;
+
 }

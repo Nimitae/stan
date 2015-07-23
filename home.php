@@ -2,7 +2,9 @@
 require_once('forAllPages.php');
 require_once('moduleservices.php');
 $moduleServices = new ModuleServices();
+$_GET['moduleID']='OHIRA1001';
 $moduleListing = $moduleServices->getModuleListing();
+$categoryListing = $moduleServices->getModuleCategories($_GET['moduleID']);
 
 include('header.partial.php');
 ?>
@@ -15,38 +17,23 @@ include('header.partial.php');
     Modules
 </h2>
 
-<div class="table-responsive">
-    <table class="table table">
-        <thead>
-        <tr>
-            <th style="width:15%">
-                Module Code
-            </th>
-            <th style="width:20%">
-                Title
-            </th>
-            <th style="width:65%">
-                Description
-            </th>
-        </tr>
-        </thead>
-        <tbody>
-        <?php foreach ($moduleListing as $module) : ?>
-            <tr id="<?php print $module->moduleID; ?>" onclick="selectedModule(this)">
-                <td>
-                    <?php print $module->moduleID; ?>
-                </td>
-                <td>
-                    <?php print $module->title; ?>
-                </td>
-                <td>
-                    <?php print $module->description; ?>
-                </td>
-            </tr>
+    <?php foreach ($moduleListing as $module) : ?>
 
-        <?php endforeach; ?>
-        </tbody>
-    </table>
-</div>
+            <a href="#" data-toggle="collapse" data-target="#<?php print $module->moduleID; ?>" class="col-sm-12 module-header">
+            <?php print $module->moduleID ?>
+            </a>
+
+        <div id="<?php print $module->moduleID; ?>" class="collapse">
+            <?php foreach ($categoryListing as $category) :?>
+
+                <div class="module-body" id="<?php print $category->categoryID;?>" onclick="selectedCategory(this)">
+                    <a href="#"><?php print $category->title; ?>  </a><br>
+                </div>
+
+            <?php endforeach; ?>
+        </div>
+        <div class="col-sm-12" style="height: 2px"></div>
+    <?php endforeach; ?>
+
 
 <?php include('footer.partial.php'); ?>
