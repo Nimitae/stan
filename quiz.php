@@ -15,8 +15,8 @@ include('header.partial.php');
     <h1 class="page-header quiz-subheader" id="quiz-subheader" draggable="false">
         <?php print $category->title; ?>
     </h1>
-    <a class="btn btn-default btn-primary quiz" id="quiz-start" href="#">Quiz On/Off</a>
-    <a class="btn btn-default btn-primary start" id="normal-start" onclick="startQuiz()">Start!</a>
+    <a class="btn btn-default btn-primary start" id="normal-start" onclick="startPractice()">Practice</a>
+    <a class="btn btn-default btn-primary start" id="quiz-start" onclick="startQuiz()">Quiz!</a>
 
     <div id="question-area">
 

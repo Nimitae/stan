@@ -2,6 +2,7 @@ var totalQuestions = 5;
 var currentScore = 0;
 var currentQuestion = 0;
 var currentQuestionList = [];
+var questionMode = 0;
 
 
 $(document).ready(function () {
@@ -22,11 +23,24 @@ function startQuiz() {
     initialiseQuestionArea();
     currentScore = 0;
     currentQuestion = 0;
+    questionMode = 1;
     var questionType = document.getElementById('questionType').innerText;
     console.log(questionType);
     if (questionType == 1) {
         console.log('here');
-        $("#question-area").prepend('<form method="post" onsubmit="checkAnswer2();return false;"><div id="question-mcq"><h1 class="page-header quiz-header2" draggable="false"><img class="resize" id="progress-bar" src=""></h1><p id="question"></p><br><div class="question-option" id="option1"><input type="radio"></div><div class="question-option" id="option2"><input type="radio"></div><div class="question-option" id="option3"><input type="radio"></div><div class="question-option" id="option4"><input type="radio"></div></div><br><br><input type="submit" class="btn btn-default btn-primary start2" value="Check Answer"></form>');
+        $("#question-area").prepend('<form method="post" onsubmit="checkQuizMCQ();return false;"><div id="question-mcq"><h1 class="page-header quiz-header2" draggable="false"><img class="resize" id="progress-bar" src=""></h1><p id="question"></p><br><div class="question-option" id="option1"><input type="radio"></div><div class="question-option" id="option2"><input type="radio"></div><div class="question-option" id="option3"><input type="radio"></div><div class="question-option" id="option4"><input type="radio"></div></div><br><br><input type="submit" class="btn btn-default btn-primary start2" value="Check Answer"></form>');
+        loadMCQQuestion();
+    }
+}
+
+function startPractice() {
+    hideStartQuiz();
+    initialiseQuestionArea();
+    questionMode = 2;
+    var questionType = document.getElementById('questionType').innerText;
+    if (questionType == 1) {
+        console.log('here');
+        $("#question-area").prepend('<form method="post" onsubmit="checkNormalMCQ();return false;"><div id="question-mcq"><p id="question"></p><br><div class="question-option" id="option1"><input type="radio"></div><div class="question-option" id="option2"><input type="radio"></div><div class="question-option" id="option3"><input type="radio"></div><div class="question-option" id="option4"><input type="radio"></div></div><br><br><input type="submit" class="btn btn-default btn-primary start2" value="Check Answer"></form>');
         loadMCQQuestion();
     }
 }
@@ -43,7 +57,7 @@ function hideStartQuiz() {
 }
 
 function loadMCQQuestion() {
-    initialiseQuestionFields();
+  //  initialiseQuestionFields();
     var prevQuestionPass = localStorage.getItem('prevQuestionResult');
     $.ajax({
         url: 'questionselector.php',
@@ -117,9 +131,9 @@ function checkAnswer(selectedOption) {
 
 }
 
-function checkAnswer2() {
+function checkQuizMCQ() {
     var answer = $('form').serialize().split("=")[1];
-    if (answer == currentQuestionList[currentQuestion-1].correct) {
+    if (answer == currentQuestionList[currentQuestion - 1].correct) {
         localStorage.setItem('prevQuestionResult', true);
         currentScore += 1;
     } else {
@@ -134,6 +148,31 @@ function checkAnswer2() {
     }
 }
 
+function checkNormalMCQ() {
+    var answer = $('form').serialize().split("=")[1];
+    if (localStorage.getItem('prevQuestionID') != document.getElementById('questionID').innerText) {
+        if (answer == currentQuestionList[currentQuestion - 1].correct) {
+            localStorage.setItem('prevQuestionResult', true);
+            alert('You got that right! Loading new question.');
+            loadMCQQuestion();
+        } else {
+            localStorage.setItem('prevQuestionResult', false);
+            alert('Nope! Try again.');
+        }
+
+        localStorage.setItem('prevQuestionID', document.getElementById('questionID').innerText);
+    } else {
+        if (answer == currentQuestionList[currentQuestion - 1].correct) {
+            localStorage.setItem('prevQuestionResult', true);
+            alert('You got that right! Loading new question.');
+            loadMCQQuestion();
+        } else {
+            localStorage.setItem('prevQuestionResult', false);
+            alert('Nope! Try again.');
+        }
+    }
+}
+
 function displayMCQ(data) {
     var dataObj = jQuery.parseJSON(data);
     console.log(dataObj);
@@ -143,10 +182,10 @@ function displayMCQ(data) {
     document.getElementById('question').innerText = dataObj.question;
     var ansArray = ['option1', 'option2', 'option3', 'option4'];
     shuffle(ansArray);
-    document.getElementById(ansArray[0]).innerHTML = "<input name='answer' type='radio' value='" +ansArray[0] +  "' id='" + ansArray[0] + "Radio'> <label class='option-label' for='" + ansArray[0] + "Radio'>" + dataObj.option1 + "</label>";
-    document.getElementById(ansArray[1]).innerHTML = "<input name='answer' type='radio' value='" +ansArray[1] +  "'  id='" + ansArray[1] + "Radio'> <label class='option-label' for='" + ansArray[1] + "Radio'>" + dataObj.option2 + "</label>";
-    document.getElementById(ansArray[2]).innerHTML = "<input name='answer' type='radio' value='" +ansArray[2] +  "'  id='" + ansArray[2] + "Radio'> <label class='option-label' for='" + ansArray[2] + "Radio'>" + dataObj.option3 + "</label>";
-    document.getElementById(ansArray[3]).innerHTML = "<input name='answer' type='radio' value='" +ansArray[3] +  "'  id='" + ansArray[3] + "Radio'> <label class='option-label' for='" + ansArray[3] + "Radio'>" + dataObj.option4 + "</label>";
+    document.getElementById(ansArray[0]).innerHTML = "<input name='answer' type='radio' value='" + ansArray[0] + "' id='" + ansArray[0] + "Radio'> <label class='option-label' for='" + ansArray[0] + "Radio'>" + dataObj.option1 + "</label>";
+    document.getElementById(ansArray[1]).innerHTML = "<input name='answer' type='radio' value='" + ansArray[1] + "'  id='" + ansArray[1] + "Radio'> <label class='option-label' for='" + ansArray[1] + "Radio'>" + dataObj.option2 + "</label>";
+    document.getElementById(ansArray[2]).innerHTML = "<input name='answer' type='radio' value='" + ansArray[2] + "'  id='" + ansArray[2] + "Radio'> <label class='option-label' for='" + ansArray[2] + "Radio'>" + dataObj.option3 + "</label>";
+    document.getElementById(ansArray[3]).innerHTML = "<input name='answer' type='radio' value='" + ansArray[3] + "'  id='" + ansArray[3] + "Radio'> <label class='option-label' for='" + ansArray[3] + "Radio'>" + dataObj.option4 + "</label>";
     document.getElementById('questionID').innerText = dataObj.questionID;
 
     var question = {
@@ -158,7 +197,10 @@ function displayMCQ(data) {
         "correct": ansArray[0]
     };
     currentQuestionList.push(question);
-    updateProgressBar();
+
+    if (questionMode == 1) {
+        updateProgressBar();
+    }
 }
 
 function initialiseQuestionFields() {
@@ -207,8 +249,8 @@ function updateProgressBar() {
 function loadEndQuiz() {
     initialiseQuestionArea();
     $('#question-area').prepend('<div><h1 class="page-header quiz-header" draggable="false">YOUR SCORE: ' + currentScore + '/' + totalQuestions + '</h1></div>' +
-        '<p id="results-area"></p>' +
-        '<a class="btn btn-default btn-primary start3" onclick="startQuiz()">Retake Quiz!</a>');
+    '<p id="results-area"></p>' +
+    '<a class="btn btn-default btn-primary start3" onclick="startQuiz()">Retake Quiz!</a>');
 
     for (var i = 0; i < currentQuestionList.length; i++) {
         $('#results-area').append('<p>' + currentQuestionList[i].question + '</p><br>' +
@@ -220,7 +262,7 @@ function loadEndQuiz() {
 
         var correct = currentQuestionList[i].correct.split('option')[1];
         $('#' + i + '_' + correct).addClass('green-answer');
-        if (typeof currentQuestionList[i].answered != 'undefined'  && currentQuestionList[i].correct != currentQuestionList[i].answered) {
+        if (typeof currentQuestionList[i].answered != 'undefined' && currentQuestionList[i].correct != currentQuestionList[i].answered) {
             var wrong = currentQuestionList[i].answered.split('option')[1];
             $('#' + i + '_' + wrong).addClass('red-answer');
         }
