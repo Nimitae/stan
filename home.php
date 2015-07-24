@@ -21,8 +21,8 @@ include('header.partial.php');
 <div class="container-fluid" style="margin-right: 40px">
     <?php foreach ($moduleListing as $module) : ?>
         <div class="panel">
-            <a href="#">
-            <div class="panel-heading module-header">
+
+            <div class="panel-heading module-header"><a href="#">
                 <h4 class="module-header" data-toggle="collapse" data-target="#<?php print $module->moduleID; ?>">
                     <?php print $module->moduleID ?>
                 </h4></a>
@@ -31,7 +31,7 @@ include('header.partial.php');
             <div id="<?php print $module->moduleID; ?>" class="panel-collapse collapse">
                 <div class="panel-body">
                     <?php foreach ($categoryListing as $category) : ?>
-                        <a href="">
+                        <a href="#">
                         <div class="module-body" id="<?php print $category->categoryID; ?>"
                              onclick="selectedCategory(this)">
                             <?php print $category->title; ?> <br>
