@@ -201,6 +201,7 @@ function displayMCQ(data) {
     if (questionMode == 1) {
         updateProgressBar();
     }
+
 }
 
 function initialiseQuestionFields() {

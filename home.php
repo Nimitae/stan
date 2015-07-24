@@ -3,12 +3,14 @@ require_once('forAllPages.php');
 require_once('moduleservices.php');
 
 $moduleServices = new ModuleServices();
+$_GET['moduleID'] = 'OHIRA1001';
 $moduleListing = $moduleServices->getModuleListing();
+$categoryListing = $moduleServices->getModuleCategories($_GET['moduleID']);
 
 include('header.partial.php');
 ?>
 
-<h1 class="page-header">
+<h1 class="overview-header">
     Welcumz
 </h1>
 
@@ -16,37 +18,30 @@ include('header.partial.php');
     Modules
 </h2>
 
-<div class="table-responsive">
-    <table class="table table-striped">
-        <thead>
-        <tr>
-            <th style="width:15%">
-                Module Code
-            </th>
-            <th style="width:20%">
-                Title
-            </th>
-            <th style="width:65%">
-                Description
-            </th>
-        </tr>
-        </thead>
-        <tbody>
-        <?php foreach ($moduleListing as $module) : ?>
-            <tr id="<?php print $module->moduleID; ?>" onclick="selectedModule(this)">
-                <td>
-                    <?php print $module->moduleID; ?>
-                </td>
-                <td>
-                    <?php print $module->title; ?>
-                </td>
-                <td>
-                    <?php print $module->description; ?>
-                </td>
-            </tr>
-        <?php endforeach; ?>
-        </tbody>
-    </table>
+<div class="container-fluid" style="margin-right: 40px">
+    <?php foreach ($moduleListing as $module) : ?>
+        <div class="panel">
+
+            <div class="panel-heading module-header"><a href="#">
+                <h4 class="module-header" data-toggle="collapse" data-target="#<?php print $module->moduleID; ?>">
+                    <?php print $module->moduleID ?>
+                </h4></a>
+            </div>
+
+            <div id="<?php print $module->moduleID; ?>" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <?php foreach ($categoryListing as $category) : ?>
+                        <a href="#">
+                        <div class="module-body" id="<?php print $category->categoryID; ?>"
+                             onclick="selectedCategory(this)">
+                            <?php print $category->title; ?> <br>
+                        </div></a>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+
+        </div>
+    <?php endforeach; ?>
 </div>
 
 <?php include('footer.partial.php'); ?>

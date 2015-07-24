@@ -14,7 +14,7 @@ include('header.partial.php');
                 <?php print $_GET['moduleID'] ; ?>
             </h2>
             <div class="table-responsive">
-                <table class="table table-striped">
+                <table class="table">
                     <thead>
                     <tr>
                         <th style="width:30%">

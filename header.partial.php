@@ -73,7 +73,7 @@
                     <a href="stastistics.php" style="color:white" class>Statistics</a>
                 </li>
                 <li>
-                    <a href="#" style="color:white">Analytics</a>
+                    <a href="modulelist.php" style="color:white">Modules</a>
                 </li>
                 <li>
                     <a href="#" style="color:white">Export</a>
@@ -94,4 +94,8 @@
                 </li>
             </ul>
         </div>
+<<<<<<< HEAD
         <div class="col-sm-9 col-sm-offset-3 col-sm-10 col-sm-offset-2 main">
+=======
+        <div class="col-sm-9 col-sm-offset-3 col-sm-10 col-sm-offset-2 main">
+>>>>>>> origin/alvi

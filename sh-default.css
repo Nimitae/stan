@@ -30,12 +30,17 @@ h1 {
     margin-left: -40px;
     margin-right: auto
 }
+
+.overview-header{
+    font: 100px'Advent Pro';
+    margin-top: 20px;
+}
 .nav.navbar-nav.navbar-right>li>a:hover {
     font-style: oblique!important
 }
 .nav.navbar-nav.navbar-right>li {
     font-stretch: normal;
-    font: 500 18px'Josefin Sans'
+    font: 400 18px'Josefin Sans'
 }
 .navbar-header>a.navbar-brand {
     color: #fdfff7;
@@ -45,7 +50,7 @@ h1 {
 }
 .nav.nav-sidebar>li>a:hover {
     font-stretch: normal;
-    font: 500 17px'Josefin Sans';
+    font: 400 17px'Josefin Sans';
     color: #d9534f!important
 }
 .nav.nav-sidebar>li {
@@ -58,7 +63,7 @@ h1 {
 .sub-header {
     text-transform: uppercase;
     font-stretch: normal;
-    font: 900 26px'Josefin Sans', serif
+    font: 700 26px'Josefin Sans', serif
 }
 th {
     font-stretch: normal!important;
@@ -150,7 +155,7 @@ form.form-signin>button.btn {
     background-color: #f0544f;
     font-size: 45px;
     margin-left: 650px;
-    margin-top: 0px;
+    margin-top: 0;
     margin-right: 0
 }
 .btn.btn-default.btn-primary:hover {
@@ -200,4 +205,59 @@ p {
 }
 .btnbar {
     background-color: #f0544f
+}
+
+table>tbody>tr:hover{
+    background-color: #c6d8d3;
+}
+
+.module-header{
+
+    color:black;
+    font: 600 20px 'Josefin Sans';
+}
+
+a>div.module-body {
+    color: black !important;
+    font: 600 18px 'Advent Pro';
+    padding-left:40px;
+}
+
+.module-header:hover{
+    color:white;
+    text-decoration: none !important;
+}
+
+a>div.module-body:hover{
+    background-color: lightcyan;
+    text-decoration: none !important;
+}
+
+.panel-body{
+    padding-left:0;
+    padding-right:0;
+    background-color: #fdfff7;
+}
+
+h4.module-header{
+    padding:10px 15px;
+    margin:0;
+
+}
+.panel {
+    margin-bottom: 0;
+}
+
+.panel-heading.module-header{
+    border-radius: 3px;
+    padding: 0;
+    background-color: lightseagreen;
+}
+
+a:hover{
+    text-decoration: none !important;
+}
+
+a:link{
+    text-decoration: none;
 }
